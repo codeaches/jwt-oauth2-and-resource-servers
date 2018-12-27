@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.codeaches</groupId>
+	<artifactId>jwt-oauth2-and-resource-servers</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<description>Demo project for Spring Boot Authorization and Resource Server with JWT</description>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>jwtoauth2server</module>
+		<module>jwtpetstore</module>
+	</modules>
+
+</project>
