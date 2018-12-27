@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
   (
     'appclient',
-    '$2a$04$NUE5ncR9072hmTO9GzRNA.FQSsz/P3pPgXRLV0cxq.t3GxPvDy4FG',
+    '$2a$08$ePUWmsLTqNezRk7MCUfg6.HU3RUO3N2M6H.Xj0gMvKiUsGgvg/Fve',
     'petstore',
     'read,write',
     'authorization_code,check_token,refresh_token,password',

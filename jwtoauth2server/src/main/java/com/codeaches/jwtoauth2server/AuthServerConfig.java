@@ -35,14 +35,19 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
 		return new JdbcTokenStore(ds);
 	}
 
-	@Bean
-	PasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder(4);
+	@Bean("clientPasswordEncoder")
+	PasswordEncoder clientPasswordEncoder() {
+		return new BCryptPasswordEncoder(8);
 	}
 
 	@Override
 	public void configure(AuthorizationServerSecurityConfigurer cfg) throws Exception {
+
+		// This will enable /oauth/check_token access
 		cfg.checkTokenAccess("permitAll");
+
+		// BCryptPasswordEncoder(8) is used for oauth_client_details.user_secret
+		cfg.passwordEncoder(clientPasswordEncoder());
 	}
 
 	@Override

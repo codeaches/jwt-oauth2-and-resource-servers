@@ -11,6 +11,8 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.authentication.configurers.provisioning.JdbcUserDetailsManagerConfigurer;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 public class UserSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -30,10 +32,17 @@ public class UserSecurityConfig extends WebSecurityConfigurerAdapter {
 		return super.authenticationManagerBean();
 	}
 
+	@Bean("userPasswordEncoder")
+	PasswordEncoder userPasswordEncoder() {
+		return new BCryptPasswordEncoder(4);
+	}
+
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
-		JdbcUserDetailsManagerConfigurer<AuthenticationManagerBuilder> cfg = auth.jdbcAuthentication().dataSource(ds);
+		// BCryptPasswordEncoder(4) is used for users.password column
+		JdbcUserDetailsManagerConfigurer<AuthenticationManagerBuilder> cfg = auth.jdbcAuthentication()
+				.passwordEncoder(userPasswordEncoder()).dataSource(ds);
 
 		cfg.getUserDetailsService().setEnableGroups(true);
 		cfg.getUserDetailsService().setEnableAuthorities(false);
