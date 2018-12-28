@@ -40,11 +40,10 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
 	@Override
 	public void configure(AuthorizationServerSecurityConfigurer cfg) throws Exception {
 
-		// This will enable /oauth/token_key URL used by resource server to validate
-		// JWT tokens
+		// Enable /oauth/token_key URL used by resource server to validate JWT tokens
 		cfg.tokenKeyAccess("permitAll");
 
-		// This will enable /oauth/check_token URL
+		// Enable /oauth/check_token URL
 		cfg.checkTokenAccess("permitAll");
 
 		// BCryptPasswordEncoder(8) is used for oauth_client_details.user_secret
