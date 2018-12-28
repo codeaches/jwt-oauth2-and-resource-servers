@@ -17,7 +17,7 @@ VALUES
   (
     'appclient',
     '$2a$08$ePUWmsLTqNezRk7MCUfg6.HU3RUO3N2M6H.Xj0gMvKiUsGgvg/Fve',
-    'jwtpetstore',
+    'petstore',
     'read,write',
     'authorization_code,check_token,refresh_token,password',
     'ROLE_CLIENT',
