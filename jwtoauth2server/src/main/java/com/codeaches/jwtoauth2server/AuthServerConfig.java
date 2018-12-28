@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
@@ -14,8 +13,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.A
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
-import org.springframework.security.oauth2.provider.token.TokenStore;
-import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
+import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 
 @Configuration
 @EnableAuthorizationServer
@@ -27,23 +25,26 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
 	@Autowired
 	AuthenticationManager authMgr;
 
-	@Autowired
-	private UserDetailsService usrSvc;
-
-	@Bean
-	public TokenStore tokenStore() {
-		return new JdbcTokenStore(ds);
-	}
-
 	@Bean("clientPasswordEncoder")
 	PasswordEncoder clientPasswordEncoder() {
 		return new BCryptPasswordEncoder(8);
 	}
 
+	@Bean
+	JwtAccessTokenConverter jwtAccessTokenConverter() {
+		JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
+		converter.setSigningKey("JWTKey@123");
+		return converter;
+	}
+
 	@Override
 	public void configure(AuthorizationServerSecurityConfigurer cfg) throws Exception {
 
-		// This will enable /oauth/check_token access
+		// This will enable /oauth/token_key URL used by resource server to validate
+		// JWT tokens
+		cfg.tokenKeyAccess("permitAll");
+
+		// This will enable /oauth/check_token URL
 		cfg.checkTokenAccess("permitAll");
 
 		// BCryptPasswordEncoder(8) is used for oauth_client_details.user_secret
@@ -58,8 +59,7 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
 	@Override
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
 
-		endpoints.tokenStore(tokenStore());
+		endpoints.accessTokenConverter(jwtAccessTokenConverter());
 		endpoints.authenticationManager(authMgr);
-		endpoints.userDetailsService(usrSvc);
 	}
 }
