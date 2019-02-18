@@ -16,5 +16,5 @@ The tutorial related to this project can be found on [Codeaches Website]
 
 [Codeaches Website]: https://codeaches.com
 
-[Travis badge]: https://img.shields.io/travis/codeaches/jwt-oauth2-and-resource-servers/master.svg?style=flat
+[Travis badge]: https://img.shields.io/travis/codeaches/jwt-oauth2-and-resource-servers/master.svg?label=Travis%20Code%20Build&style=flat
 [Travis]: https://travis-ci.org/codeaches/jwt-oauth2-and-resource-servers/builds
