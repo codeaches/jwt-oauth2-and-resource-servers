@@ -1,4 +1,4 @@
-package com.codeaches.jwtpetstore;
+package com.codeaches.jwtcarinventoryservice;
 
 import java.security.Principal;
 

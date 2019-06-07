@@ -12,8 +12,8 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>jwtoauth2server</module>
-		<module>jwtpetstore</module>
+		<module>jwt-oauth2-server</module>
+		<module>jwt-car-inventory-service</module>
 	</modules>
 
 </project>

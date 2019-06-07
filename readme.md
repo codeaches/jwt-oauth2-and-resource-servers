@@ -1,12 +1,14 @@
 [![License MIT][MIT badge]][MIT]
 [![Travis Build][Travis badge]][Travis]
+[![CircleCI Build][CircleCI badge]][CircleCI]
 [![][Paypal Donate Img]][Paypal Donate Link]
 
 The **current** version of this project is licensed under [MIT].
 
 ## Relevant documents
 
-The tutorial related to this project can be found on [Codeaches Website]
+- The tutorial related to this project can be found on [Codeaches Website]
+- This project is built using OpenJDK 12 
 
 [MIT badge]: https://img.shields.io/:license-MIT%202.0-blue.svg
 [MIT]: https://opensource.org/licenses/mit-license.php
@@ -18,3 +20,6 @@ The tutorial related to this project can be found on [Codeaches Website]
 
 [Travis badge]: https://img.shields.io/travis/codeaches/jwt-oauth2-and-resource-servers/master.svg?label=Travis%20Code%20Build&style=flat
 [Travis]: https://travis-ci.org/codeaches/jwt-oauth2-and-resource-servers/builds
+
+[CircleCI badge]: https://circleci.com/gh/codeaches/jwt-oauth2-and-resource-servers.svg?style=svg
+[CircleCI]: https://circleci.com/gh/codeaches/jwt-oauth2-and-resource-servers
