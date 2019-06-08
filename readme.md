@@ -1,6 +1,7 @@
 [![License MIT][MIT badge]][MIT]
 [![Travis Build][Travis badge]][Travis]
 [![CircleCI Build][CircleCI badge]][CircleCI]
+[![Quality Gate Status][Quality Gate Status badge]][Quality Gate]
 [![][Paypal Donate Img]][Paypal Donate Link]
 
 The **current** version of this project is licensed under [MIT].
@@ -23,3 +24,6 @@ The **current** version of this project is licensed under [MIT].
 
 [CircleCI badge]: https://circleci.com/gh/codeaches/jwt-oauth2-and-resource-servers.svg?style=svg
 [CircleCI]: https://circleci.com/gh/codeaches/jwt-oauth2-and-resource-servers
+
+[Quality Gate Status badge]: https://sonarcloud.io/api/project_badges/measure?project=com.codeaches%3Ajwt-oauth2-and-resource-servers&metric=alert_status
+[Quality Gate]: https://sonarcloud.io/dashboard?id=com.codeaches%3Ajwt-oauth2-and-resource-servers
