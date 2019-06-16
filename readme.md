@@ -11,6 +11,8 @@ The **current** version of this project is licensed under [MIT].
 - The tutorial related to this project can be found on [Codeaches Website]
 - This project is built using OpenJDK 12 
 
+[![Gitter Chat][Gitter badge]][Gitter]
+
 [MIT badge]: https://img.shields.io/:license-MIT%202.0-blue.svg
 [MIT]: https://opensource.org/licenses/mit-license.php
 
@@ -27,3 +29,6 @@ The **current** version of this project is licensed under [MIT].
 
 [Quality Gate Status badge]: https://sonarcloud.io/api/project_badges/measure?project=com.codeaches%3Ajwt-oauth2-and-resource-servers&metric=alert_status
 [Quality Gate]: https://sonarcloud.io/dashboard?id=com.codeaches%3Ajwt-oauth2-and-resource-servers
+
+[Gitter badge]: https://badges.gitter.im/Codeaches/jwt-oauth2-and-resource-servers.svg
+[Gitter]: https://gitter.im/Codeaches/jwt-oauth2-and-resource-servers?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
